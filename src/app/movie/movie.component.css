@@ -1,0 +1,11 @@
+*{
+  background-color: rgb(17, 17, 17);
+  color: white;
+}
+
+.brd{
+  height: 1px;
+  background-color: gray;
+  margin-bottom: 5px;
+}
+

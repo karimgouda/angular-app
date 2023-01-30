@@ -1,0 +1,26 @@
+*{
+  background-color: rgb(17, 17, 17);
+  color: white;
+}
+
+.brd{
+  height: 1px;
+  background-color: gray;
+  margin-bottom: 5px;
+}
+input{
+  outline: none ;
+  border: 1px solid gold;
+  border-radius: 20px;
+  background-color: rgb(17, 17, 17);
+  color: #fff;
+
+}
+input:focus{
+  border: 1px solid rgb(192, 192, 192);
+  background-color:rgb(17, 17, 17) ;
+  color: white;
+  border: 1px solid gold;
+  outline: none ;
+
+}

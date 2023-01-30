@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>SignUP</h1>
+  <p *ngIf="registerError" class="alert alert-danger">{{registerError}}</p>
+  <form (ngSubmit)="registerMethod(register)" [formGroup]="register">
+    <input  formControlName="first_name" type="text" placeholder="First Name" name="" id="">
+    <div *ngIf="register.get('first_name')?.errors && register.get('first_name')?.touched" class="error">
+      <p *ngIf="register.get('first_name')?.getError('required')" class=" alert alert-danger">First Name is required</p>
+      <p *ngIf="register.get('first_name')?.getError('minlength')" class=" alert alert-danger">First Name must be is 3 char</p>
+      <p *ngIf="register.get('first_name')?.getError('maxlength')" class=" alert alert-danger">First Name Maxmum is 6 char</p>
+    </div>
+    <input formControlName="last_name" type="text"   placeholder="Last Name"  name=""  id="">
+    <div *ngIf="register.get('last_name')?.errors && register.get('last_name')?.touched" class="error">
+      <p *ngIf="register.get('last_name')?.getError('required')" class=" alert alert-danger">Last Name is required</p>
+      <p *ngIf="register.get('last_name')?.getError('minlength')" class=" alert alert-danger">Last Name must be is 3 char</p>
+      <p *ngIf="register.get('last_name')?.getError('maxlength')" class=" alert alert-danger">Last Name Maxmum is 6 char</p>
+    </div>
+    <input formControlName="email" type="email" placeholder="Email"  name="" id="">
+    <div *ngIf="register.get('email')?.errors && register.get('email')?.touched" class="error">
+      <p *ngIf="register.get('email')?.getError('required')" class=" alert alert-danger">Email is required</p>
+      <p *ngIf="register.get('email')?.getError('email')" class=" alert alert-danger">Please enter the form of mail</p>
+    </div>
+    <input formControlName="password" type="password"  placeholder="Password" name="" id="">
+    <div *ngIf="register.get('password')?.errors && register.get('password')?.touched" class="error">
+      <p *ngIf="register.get('password')?.getError('required')" class=" alert alert-danger">Password is required</p>
+      <p *ngIf="register.get('password')?.getError('pattern')" class=" alert alert-danger">Please enter a password starting with a letter and ending with numbers</p>
+    </div>
+
+    <input formControlName="age" type="number"  placeholder="age" name="" id="">
+    <div *ngIf="register.get('age')?.errors && register.get('age')?.touched" class="error">
+      <p *ngIf="register.get('age')?.getError('required')" class=" alert alert-danger">Age is required</p>
+      <p *ngIf="register.get('age')?.getError('min')" class=" alert alert-danger">min in 16 </p>
+      <p *ngIf="register.get('age')?.getError('max')" class=" alert alert-danger">max in 80</p>
+    </div>
+
+
+    <button [disabled]="register.invalid">SignUP</button>
+    <div class="member">
+      Already a member? <a routerLink="/login">Login Here</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 bx-5">
+      <div class=" py-5">
+        <img class="w-75" [src]="  imagePath+movieData.poster_path" alt="">
+      </div>
+    </div>
+
+
+  <div class="col-md-7 pt-5">
+    <div >
+      <h4 class="bt-3">{{movieData.title}}</h4>
+      <p>{{movieData.tagline}}</p>
+    </div>
+    <div class="span">
+      <span>{{movieData.genres[0].name}}</span>
+      <span>{{movieData.genres[1].name}}</span>
+      <span>{{movieData.genres[2].name}}</span>
+      <span class="p">{{movieData.release_date}}</span>
+    </div>
+    <div class="overView">
+      <p class=" text-muted">{{movieData.overview}}</p>
+    </div>
+
+    <div>
+      <p class="pt-3">   Vote: {{movieData.vote_average}}</p>
+      <p>  Vote Count: {{movieData.vote_count}}</p>
+      <p>   Status: {{movieData.status}}</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+

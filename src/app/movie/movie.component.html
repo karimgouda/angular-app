@@ -1,0 +1,23 @@
+
+
+<div class="container-fluid pt-4 px-5 ">
+
+  <div class="row gy-4">
+    <div class="col-md-4">
+      <div class="brd w-25"></div>
+      <h4 class="text-white">
+        trending <br>Movies <br> To Watch Now
+      </h4>
+      <p class="text-white text-muted ">most watched movies by day</p>
+      <div class="brd w-75"></div>
+
+    </div>
+
+
+      <div *ngFor="let movei of array " class="col-md-2 position-relative ">
+      <span class="position-absolute top-0 start-25 bg-primary">{{movei.vote_average}}</span>
+      <img  [routerLink]="['/network',movei.id]" class="w-100 " [src]="imagePath+movei.poster_path" alt="">
+        <h6 class="text-white">{{movei.name}}</h6>
+    </div>
+  </div>
+</div>

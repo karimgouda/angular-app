@@ -1,0 +1,42 @@
+
+
+.test{
+  background-color: #ea1538;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+.span{
+  display: flex;
+  align-items:center;
+  margin-right: 20px !important;
+}
+
+nav{
+  background-color: rgb(17, 17, 17) !important;
+  border-bottom: 1px solid gold !important;
+}
+.logo::after{
+
+  content: " Unlimited..| ";
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-style: italic;
+  animation: type 2s linear 2s infinite alternate;
+}
+
+@keyframes type{
+
+  0%{content: "| ";}
+  10%{content: "U|";}
+  20%{content: "Un|";}
+  30%{content: "Unl|";}
+  40%{content: "Unli|" ;}
+  50%{content: "unlim|";}
+  60%{content: "Unlimi|";}
+  70%{content: "Unlimit|";}
+  80%{content: "Unlimite|";}
+  90%{content: "Unlimited|";}
+  100%{content: "Unlimited..|";}
+}

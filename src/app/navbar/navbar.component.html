@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark  ">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" href="#">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a *ngIf="login" class="nav-link active"  routerLinkActive="test" aria-current="page" routerLink="home"  >Home</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a *ngIf="login" class="nav-link" routerLinkActive="test" routerLink="movie">Moveis</a>
+        </li>
+        <li class="nav-item px-3">
+          <a *ngIf="login" class="nav-link" routerLinkActive="test"  routerLink="movieShow">Moveis Tv</a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a *ngIf="!login" class="nav-link" routerLinkActive="test"  routerLink="login">Login</a>
+        </li>
+        <li class="nav-item mx-2">
+          <span (click)="logout()" *ngIf="login" class="nav-link" >Logout</span>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

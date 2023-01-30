@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+<div class="container">
+
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of data">
+      <ng-template carouselSlide [id]="slide.id">
+        <img [src]="imagePath+slide.poster_path">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+</div>
+
+<div class="container ">
+  <input  [(ngModel)]="searchWork"  type="text" class="form-control mb-4 w-50 m-auto" placeholder="Search...">
+
+  <div class="row gy-4">
+    <div class="col-md-4">
+      <div class="brd w-25"></div>
+      <h4 class="text-white">
+        trending <br>Movies <br> To Watch Now
+      </h4>
+      <p class="text-white text-muted ">most watched movies by day</p>
+      <div class="brd w-75"></div>
+
+    </div>
+
+
+      <div *ngFor="let movei of data|serch:searchWork" class="col-md-2 position-relative ">
+      <span class="position-absolute top-0 start-25 bg-primary">{{movei.vote_average}}</span>
+      <img  [routerLink]="['/network',movei.id]" class="w-100 " [src]="imagePath+movei.poster_path" alt="">
+        <h6 class="text-white">{{movei.title}}</h6>
+    </div>
+  </div>
+</div>
+
+
+  <nav aria-label="..." class=" d-flex   justify-content-center pt-3    align-items-cenetr  ">
+  <ul class="pagination pagination-sm">
+    <li (click)="getPage(x+1)"  *ngFor="let i of page ; let x = index" class="page-item"><a class="page-link" >{{x+1}}</a></li>
+  </ul>
+</nav>
+
+<div class="container ">
+  <div class="row gy-4">
+    <div class="col-md-4">
+      <div class="brd w-25"></div>
+      <h4 class="text-white">
+        trending <br>Tv <br> To Watch Now
+      </h4>
+      <p class="text-white text-muted ">most watched movies by day</p>
+      <div class="brd w-75"></div>
+
+    </div>
+
+
+      <div *ngFor="let tv of tv" class="col-md-2 position-relative ">
+      <span class="position-absolute top-0 start-25 bg-primary">{{tv.vote_average}}</span>
+      <img  [routerLink]="['/network',tv.id]"   class="w-100 " [src]="imagePath+tv.poster_path" alt="">
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

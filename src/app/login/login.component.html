@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+<div class="wrapper">
+  <h1>Login</h1>
+  <p *ngIf="loginError"  class="alert alert-danger">{{loginError}}</p>
+  <form (submit)="loginMethod(login)" [formGroup]="login">
+    <input formControlName="email" type="email" placeholder="Email"  name="" id="">
+    <div *ngIf="login.get('email')?.errors && login.get('email')?.touched" class="error">
+      <p *ngIf="login.get('email')?.getError('required')" class=" alert alert-danger">Email is required</p>
+      <p *ngIf="login.get('email')?.getError('email')" class=" alert alert-danger">Please enter the form of mail</p>
+    </div>
+    <input formControlName="password" type="password"  placeholder="Password" name="" id="">
+
+    <div *ngIf="login.get('password')?.errors && login.get('password')?.touched" class="error">
+      <p *ngIf="login.get('password')?.getError('required')" class=" alert alert-danger">Password is required</p>
+      <p *ngIf="login.get('password')?.getError('pattern')" class=" alert alert-danger">Please enter a password starting with a letter and ending with numbers</p>
+    </div>
+
+
+
+    <button [disabled]="login.invalid">Login</button>
+    <div class="member">
+      Already a member? <a routerLink="/register">Register Here</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
